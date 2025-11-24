@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Georgia Dumpster & Trailer Rental LLC | Gainesville, GA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Georgia Dumpster & Trailer Rental LLC provides affordable dump trailer rentals and dumpster services in Gainesville, GA and Hall County. Easy booking, transparent pricing, and fast delivery."
+  />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-light: #111827;
+      --accent: #22c55e;
+      --accent-soft: rgba(34, 197, 94, 0.1);
+      --accent-dark: #16a34a;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --card: #020617;
+      --border: #1f2937;
+      --error: #f97373;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 55%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .brand-logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: conic-gradient(
+        from 210deg,
+        #22c55e,
+        #86efac,
+        #22c55e,
+        #16a34a
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 18px rgba(34, 197, 94, 0.5);
+      font-weight: 800;
+      color: #022c22;
+      font-size: 0.9rem;
+    }
+
+    .brand-text-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-text-sub {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.3rem;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.18s ease-out;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(34, 197, 94, 0.5);
+      background: radial-gradient(circle at top, #22c55e1f, transparent 55%);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+      box-shadow: 0 0 12px rgba(34, 197, 94, 0.35);
+      cursor: pointer;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent);
+      color: #022c22;
+    }
+
+    .mobile-toggle {
+      display: none;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.25rem;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 2.5rem;
+      align-items: center;
+      padding-top: 3rem;
+      padding-bottom: 2rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      border-radius: 999px;
+      padding: 0.15rem 0.65rem 0.15rem 0.2rem;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      margin-bottom: 1.25rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .badge-dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #bbf7d0, #22c55e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #022c22;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 3vw + 1rem, 2.9rem);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title span {
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      color: var(--muted);
+      max-width: 34rem;
+      font-size: 0.98rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-list {
+      list-style: none;
+      margin-bottom: 1.9rem;
+      display: grid;
+      gap: 0.35rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .hero-list li::before {
+      content: "✓";
+      color: var(--accent);
+      font-weight: 700;
+      margin-right: 0.4rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .btn-primary {
+      padding: 0.65rem 1.5rem;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #022c22;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(34, 197, 94, 0.55);
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.08);
+      transform: translateY(-0.5px);
+    }
+
+    .btn-secondary {
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.7);
+      color: var(--muted);
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--text);
+    }
+
+    .hero-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .hero-meta span {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .hero-media {
+      position: relative;
+    }
+
+    .hero-card {
+      border-radius: 1.5rem;
+      border: 1px solid var(--border);
+      background: radial-gradient(circle at top left, #0b1120, #020617);
+      padding: 1.25rem;
+      box-shadow: 0 22px 50px rgba(15, 23, 42, 0.85);
+    }
+
+    .hero-card-title {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-price {
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-price-main {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .hero-price-sub {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.8rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-grid {
+      margin-top: 0.6rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.6rem;
+    }
+
+    .hero-stat {
+      border-radius: 0.9rem;
+      border: 1px solid var(--border);
+      padding: 0.6rem 0.75rem;
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-stat-label {
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-bottom: 0.15rem;
+    }
+
+    .hero-stat-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .hero-tag {
+      position: absolute;
+      right: 0.5rem;
+      bottom: -0.3rem;
+      padding: 0.3rem 0.75rem;
+      font-size: 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.95);
+      color: var(--muted);
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 32rem;
+      margin: 0 auto;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.3rem;
+    }
+
+    .card {
+      border-radius: 1.1rem;
+      border: 1px solid var(--border);
+      background: linear-gradient(145deg, #020617, #020617);
+      padding: 1.1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-tag {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.9rem;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--muted);
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .card-price {
+      font-size: 0.95rem;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .card-desc {
+      font-size: 0.87rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .card-list {
+      list-style: none;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: grid;
+      gap: 0.15rem;
+    }
+
+    .card-list li::before {
+      content: "• ";
+      color: var(--accent);
+    }
+
+    .pricing-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 1rem;
+    }
+
+    .service-area {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 1.9rem;
+      align-items: center;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      border-radius: 999px;
+      padding: 0.25rem 0.75rem;
+      border: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .service-area-list {
+      list-style: none;
+      display: grid;
+      gap: 0.25rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .service-area-list li::before {
+      content: "• ";
+      color: var(--accent);
+    }
+
+    .service-area-box {
+      border-radius: 1.1rem;
+      border: 1px dashed rgba(148, 163, 184, 0.5);
+      padding: 1rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: rgba(15, 23, 42, 0.7);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    form {
+      border-radius: 1.1rem;
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.9);
+      padding: 1.2rem;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .form-row {
+      display: grid;
+      gap: 0.4rem;
+    }
+
+    label {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    input,
+    select,
+    textarea {
+      border-radius: 0.6rem;
+      border: 1px solid #1f2937;
+      padding: 0.55rem 0.7rem;
+      background: #020617;
+      color: var(--text);
+      font-size: 0.88rem;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.2);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .form-note {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .error {
+      color: var(--error);
+      font-size: 0.75rem;
+      display: none;
+    }
+
+    .contact-card {
+      border-radius: 1.1rem;
+      border: 1px solid var(--border);
+      background: radial-gradient(circle at top, #020617, #020617);
+      padding: 1.2rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .contact-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+
+    .contact-row {
+      margin-top: 0.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .contact-value {
+      font-size: 0.9rem;
+    }
+
+    .contact-highlight {
+      font-size: 0.78rem;
+      padding: 0.4rem 0.6rem;
+      border-radius: 0.6rem;
+      background: rgba(34, 197, 94, 0.08);
+      color: var(--accent);
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
+    .faq-grid {
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .faq-item {
+      border-radius: 0.9rem;
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.9);
+      padding: 0.9rem 1rem;
+    }
+
+    .faq-q {
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-a {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.1rem 1.25rem 1.5rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 840px) {
+      .hero,
+      .service-area,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-media {
+        order: -1;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-toggle {
+        display: inline-flex;
+        border-radius: 999px;
+        padding: 0.3rem 0.7rem;
+        border: 1px solid var(--border);
+        font-size: 0.8rem;
+        color: var(--muted);
+        cursor: pointer;
+        background: rgba(15, 23, 42, 0.8);
+      }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        padding: 0.75rem 1.25rem 1rem;
+        background: rgba(15, 23, 42, 0.98);
+        border-bottom: 1px solid var(--border);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <nav class="nav">
+        <div class="brand">
+          <div class="brand-logo">GD</div>
+          <div>
+            <div class="brand-text-title">
+              Georgia Dumpster & Trailer Rental LLC
+            </div>
+            <div class="brand-text-sub">Gainesville, GA · Hall County</div>
+          </div>
+        </div>
+
+        <button class="mobile-toggle" type="button" onclick="toggleNav()">
+          Menu
+        </button>
+
+        <div class="nav-links" id="navLinks">
+          <a href="#services">Services</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#area">Service Area</a>
+          <a href="#contact">Book Now</a>
+          <button class="nav-cta" type="button" onclick="scrollToContact()">
+            Call / Text: (678) 343-3352
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="section hero" id="top">
+        <div>
+          <div class="badge">
+            <div class="badge-dot">✓</div>
+            <span>Local, insured, and ready to roll</span>
+          </div>
+
+          <h1 class="hero-title">
+            Dump trailers & dumpsters that make
+            <span>clean-up easy</span>.
+          </h1>
+
+          <p class="hero-subtitle">
+            Georgia Dumpster & Trailer Rental LLC provides fast, friendly dump
+            trailer and dumpster rentals based in Gainesville, GA and serving all
+            of Hall County. We drop it off, you load it, we haul it away. Simple
+            pricing, no surprises (plus applicable sales tax).
+          </p>
+
+          <ul class="hero-list">
+            <li>Perfect for clean-outs, small remodels, yard debris & more</li>
+            <li>Same- or next-day delivery when available</li>
+            <li>Transparent flat-rate pricing by day or by load</li>
+          </ul>
+
+          <div class="hero-actions">
+            <button class="btn-primary" type="button" onclick="scrollToContact()">
+              Get a free quote
+            </button>
+            <button class="btn-secondary" type="button" onclick="scrollToContact()">
+              Text photos for estimate
+            </button>
+          </div>
+
+          <p class="hero-meta">
+            Serving <span>Gainesville, GA & Hall County</span> · Licensed & insured
+          </p>
+        </div>
+
+        <div class="hero-media">
+          <div class="hero-card">
+            <div class="hero-card-title">Popular option</div>
+            <div class="hero-price">
+              <div class="hero-price-main">$199</div>
+              <div class="hero-price-sub">for 1-day rental*</div>
+            </div>
+            <div class="hero-badge">
+              <span>Includes drop-off & pick-up (core area)</span>
+            </div>
+            <p class="hero-card-title">
+              14 ft dump trailer · up to X,XXX lbs (edit to your specs)
+            </p>
+            <div class="hero-grid">
+              <div class="hero-stat">
+                <div class="hero-stat-label">Rental window</div>
+                <div class="hero-stat-value">24 hours</div>
+              </div>
+              <div class="hero-stat">
+                <div class="hero-stat-label">Extra days</div>
+                <div class="hero-stat-value">$XX / day</div>
+              </div>
+              <div class="hero-stat">
+                <div class="hero-stat-label">Haul-away option</div>
+                <div class="hero-stat-value">Available</div>
+              </div>
+              <div class="hero-stat">
+                <div class="hero-stat-label">Booking</div>
+                <div class="hero-stat-value">Call or text</div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-tag">
+            *Plus dump fees & applicable Georgia sales tax
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section class="section" id="services">
+        <div class="section-heading">
+          <h2 class="section-title">Trailer & dumpster services</h2>
+          <p class="section-subtitle">
+            Choose the option that fits your project. All rentals include
+            delivery & pick-up within our core Gainesville / Hall County service area.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="card">
+            <div class="card-tag">Most common</div>
+            <h3 class="card-title">Standard 1-Day Rental</h3>
+            <div class="card-price">Starting at $199 + tax</div>
+            <p class="card-desc">
+              Ideal for garage clean-outs, small remodeling jobs, and yard
+              projects.
+            </p>
+            <ul class="card-list">
+              <li>Drop-off in the morning, pick-up next day</li>
+              <li>Includes X,XXX lbs (adjust to your specs)</li>
+              <li>Additional weight billed at landfill rates</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-tag">Multi-day</div>
+            <h3 class="card-title">Weekend / 3-Day Rental</h3>
+            <div class="card-price">Starting at $XXX + tax</div>
+            <p class="card-desc">
+              Take your time with bigger projects or if you’re working evenings
+              and weekends.
+            </p>
+            <ul class="card-list">
+              <li>Flexible drop-off and pick-up times</li>
+              <li>Great for small contractor jobs</li>
+              <li>Discounted multi-day pricing</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-tag">We do the loading</div>
+            <h3 class="card-title">Full Service Haul-Away</h3>
+            <div class="card-price">Call for custom quote</div>
+            <p class="card-desc">
+              Don’t want to load it yourself? Ask about full service options
+              where we handle the heavy lifting.
+            </p>
+            <ul class="card-list">
+              <li>You point, we load (within reason)</li>
+              <li>Great for bulky items & furniture</li>
+              <li>Pricing depends on volume & access</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- Pricing note -->
+      <section class="section" id="pricing">
+        <div class="section-heading">
+          <h2 class="section-title">Simple, transparent pricing</h2>
+          <p class="section-subtitle">
+            Every quote clearly shows rental, estimated dump fees, and
+            applicable Georgia sales tax so there are no surprises.
+          </p>
+        </div>
+        <p class="pricing-note">
+          <strong>Note:</strong> Final price may change based on actual dump
+          fees, overweight charges, or extended rental time. Georgia sales tax
+          is collected on the taxable rental portion as required by law.
+        </p>
+      </section>
+
+      <!-- Service Area -->
+      <section class="section" id="area">
+        <div class="service-area">
+          <div>
+            <div class="pill">
+              <span class="pill-dot"></span>
+              Based in Gainesville, GA
+            </div>
+            <h2 class="section-title" style="text-align: left; margin-bottom: 0.5rem;">
+              Where we deliver
+            </h2>
+            <p class="section-subtitle" style="text-align: left; margin-bottom: 1rem;">
+              We’re based in Gainesville and focus on fast, on-time deliveries
+              within our core Hall County area.
+            </p>
+
+            <ul class="service-area-list">
+              <li>Gainesville, GA</li>
+              <li>Oakwood</li>
+              <li>Flowery Branch</li>
+              <li>Buford (Hall County side) & surrounding communities</li>
+            </ul>
+
+            <p class="pricing-note" style="text-align: left; margin-top: 0.9rem;">
+              <strong>Outside Hall County?</strong> We may still be able to help.
+              Contact us with your address for a custom delivery fee.
+            </p>
+          </div>
+
+          <div class="service-area-box">
+            <strong>Driveway & placement requirements</strong>
+            <ul class="service-area-list" style="margin-top: 0.6rem;">
+              <li>Clear, reasonably level space for trailer & truck</li>
+              <li>No low power lines or tree branches blocking access</li>
+              <li>Customer is responsible for any HOA / city permissions</li>
+              <li>No hazardous materials (paint, chemicals, fuel, etc.)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact / Booking -->
+      <section class="section" id="contact">
+        <div class="section-heading">
+          <h2 class="section-title">Get a free quote or book a trailer</h2>
+          <p class="section-subtitle">
+            Send us a few details about your project and we’ll respond with a
+            clear estimate (including rental, estimated dump fees, and tax).
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <form id="bookingForm">
+            <div class="form-row">
+              <label for="name">Name *</label>
+              <input type="text" id="name" name="name" required />
+              <div class="error" id="nameError">Please enter your name.</div>
+            </div>
+
+            <div class="form-row">
+              <label for="phone">Phone (best for call/text) *</label>
+              <input type="tel" id="phone" name="phone" required />
+              <div class="error" id="phoneError">
+                Please enter a valid phone number.
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label for="email">Email (optional)</label>
+              <input type="email" id="email" name="email" />
+            </div>
+
+            <div class="form-row">
+              <label for="address">Drop-off address (city & ZIP at minimum) *</label>
+              <input type="text" id="address" name="address" required />
+              <div class="error" id="addressError">
+                Please tell us where the trailer is going.
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label for="date">Preferred date</label>
+              <input type="date" id="date" name="date" />
+            </div>
+
+            <div class="form-row">
+              <label for="serviceType">Service type</label>
+              <select id="serviceType" name="serviceType">
+                <option value="1-day">1-day rental</option>
+                <option value="weekend">Weekend / 3-day rental</option>
+                <option value="haul-away">Full service haul-away</option>
+                <option value="other">Not sure yet</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label for="details">Project details (what are you cleaning up?)</label>
+              <textarea
+                id="details"
+                name="details"
+                placeholder="Tell us what you’re loading (household junk, construction debris, yard waste, etc.)"
+              ></textarea>
+            </div>
+
+            <button class="btn-primary" type="submit">Send request</button>
+            <p class="form-note">
+              This form does not book a trailer automatically. We’ll confirm
+              availability by call or text.
+            </p>
+          </form>
+
+          <aside class="contact-card">
+            <h3>Prefer to talk or text?</h3>
+            <div class="contact-row">
+              <div class="contact-label">Call / Text</div>
+              <div class="contact-value">(678) 343-3352</div>
+            </div>
+
+            <div class="contact-row">
+              <div class="contact-label">Email</div>
+              <div class="contact-value">
+                <a href="mailto:georgiadumpsterandtrailerllc@yahoo.com">
+                  georgiadumpsterandtrailerllc@yahoo.com
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <div class="contact-label">Location</div>
+              <div class="contact-value">Gainesville, GA</div>
+            </div>
+
+            <div class="contact-row">
+              <div class="contact-label">Hours</div>
+              <div class="contact-value">
+                Mon–Sat: 8:00am – 6:00pm<br />
+                Sunday by appointment
+              </div>
+            </div>
+
+            <span class="contact-highlight">
+              Need a quick estimate? Text us photos of what you need hauled
+              away and your ZIP code.
+            </span>
+          </aside>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section" id="faq">
+        <div class="section-heading">
+          <h2 class="section-title">Frequently asked questions</h2>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-item">
+            <div class="faq-q">
+              What can I put in the dump trailer or dumpster?
+            </div>
+            <div class="faq-a">
+              Most household junk, furniture, yard waste, and construction
+              debris are fine. We <strong>cannot</strong> take paint, oils,
+              fuel, chemicals, tires, or other hazardous materials. Ask us if
+              you’re not sure.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">
+              Do you charge sales tax on the rental?
+            </div>
+            <div class="faq-a">
+              Yes. Georgia requires sales tax on the rental of tangible
+              property (like trailers and dumpsters). Your quote will clearly show
+              the rental price, estimated dump fees, and applicable sales tax.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">
+              How much driveway space do I need?
+            </div>
+            <div class="faq-a">
+              You’ll need enough space for the trailer/dumpster and our truck to safely
+              maneuver. A typical driveway works fine if it’s clear, fairly
+              level, and free of low branches or wires. We can discuss
+              placement before we deliver.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div>
+          © <span id="year"></span> Georgia Dumpster & Trailer Rental LLC.
+          All rights reserved.
+        </div>
+        <div class="footer-links">
+          <a href="#top">Back to top</a>
+          <a href="#contact">Book now</a>
+          <a href="#faq">FAQ</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    function toggleNav() {
+      var nav = document.getElementById("navLinks");
+      nav.classList.toggle("open");
+    }
+
+    function scrollToContact() {
+      document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+    }
+
+    document.getElementById("bookingForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var valid = true;
+
+      function showError(id, show) {
+        var el = document.getElementById(id);
+        if (el) el.style.display = show ? "block" : "none";
+      }
+
+      var name = document.getElementById("name").value.trim();
+      var phone = document.getElementById("phone").value.trim();
+      var address = document.getElementById("address").value.trim();
+
+      if (!name) {
+        showError("nameError", true);
+        valid = false;
+      } else {
+        showError("nameError", false);
+      }
+
+      if (!phone) {
+        showError("phoneError", true);
+        valid = false;
+      } else {
+        showError("phoneError", false);
+      }
+
+      if (!address) {
+        showError("addressError", true);
+        valid = false;
+      } else {
+        showError("addressError", false);
+      }
+
+      if (!valid) return;
+
+      alert(
+        "Thank you! Your request has been recorded. Replace this alert with your own email or form handling (e.g., a form service or backend)."
+      );
+      this.reset();
+    });
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear().toString();
+  </script>
+</body>
+</html>
+
